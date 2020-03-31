@@ -33,3 +33,14 @@
   height: 100vh;
   background: linear-gradient(-45deg, #196480, #0c3450);
 }
+
+// TODO: Remove temporary styles for the splash screen.
+
+.heading {
+  position: relative;
+  margin-bottom: 0;
+  font-size: 3.2rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
