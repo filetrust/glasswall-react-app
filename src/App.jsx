@@ -9,7 +9,8 @@ const App = () => {
         <div className={styles.app}>
             <div className={styles.titleContainer}>
                 <GlasswallLoginLogo />
-               
+            
+                <h1 className={styles.heading}>Glasswall-React-App</h1>
             </div>            
         </div>
     );
