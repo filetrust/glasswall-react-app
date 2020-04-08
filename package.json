@@ -13,7 +13,13 @@
     "url": "https://github.com/filetrust/glasswall-react-app/issues"
   },
   "files": [
-    "template",
+    "template/.vscode",
+    "template/public",
+    "template/src",
+    "template/.eslintrc.js",
+    "template/gitignore",
+    "template/README.md",
+    "template/tsconfig.json",
     "template.json"
   ]
 }
