@@ -1,17 +1,16 @@
 import React from "react";
 
-import GlasswallLoginLogo from "./components/GlasswallLoginLogo/GlasswallLoginLogo";
+import SplashScreen from "./components/SplashScreen/SplashScreen";
 
 import styles from "./App.module.scss";
 
 const App = () => {
     return (
         <div className={styles.app}>
-            <div className={styles.titleContainer}>
-                <GlasswallLoginLogo />
-            
-                <h1 className={styles.heading}>Glasswall-React-App</h1>
-            </div>            
+            <SplashScreen heading="Glasswall React App" subHeading="Edit src/App.jsx and save to reload.">
+                <a className={styles.button} href="https://github.com/filetrust/glasswall-react-app" target="_blank" rel="noopener noreferrer">Github</a>
+                <a className={styles.button} href="https://filetrust.github.io/frontend/" target="_blank" rel="noopener noreferrer">Style Guide</a>
+            </SplashScreen>
         </div>
     );
 };

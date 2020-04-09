@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./GlasswallLoginLogo.module.scss";
+import styles from "./GlasswallLogo.module.scss";
 
 const GlasswallLoginLogo = () => {
     return (
