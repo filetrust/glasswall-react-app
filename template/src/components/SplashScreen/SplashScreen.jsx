@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 import GlasswallLogo from "../GlasswallLogo/GlasswallLogo";
 
@@ -14,12 +15,18 @@ const SplashScreen = ({ heading, subHeading, children }) => {
             <div className={styles.headingContainer} data-testid="headingContainerDiv">
                 <h1 className={styles.heading}>{heading}</h1>
                 <h2 className={styles.subHeading}>{subHeading}</h2>
-                <div className={styles.childContainer}>
+                <div className={styles.childContainer} data-testid="childContainerDiv">
                     {children}
                 </div>
             </div>
         </div>
     );
+};
+
+SplashScreen.propTypes = {
+    heading: PropTypes.string.isRequired,
+    subHeading: PropTypes.string,
+    children: PropTypes.array
 };
 
 export default SplashScreen;
