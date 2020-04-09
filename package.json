@@ -1,6 +1,6 @@
 {
   "name": "@glasswallsolutions/cra-template-glasswall-react-app",
-  "version": "2.1.1",
+  "version": "2.2.1",
   "description": "A Glasswall template for CRA with a Glasswall NPM library pre-loaded. To enforce a consistent codebase and allow for our frontend styles to come together from pre-packaged NPM modules.",
   "main": "template.json",
   "author": "glasswallsolutions",
@@ -13,7 +13,13 @@
     "url": "https://github.com/filetrust/glasswall-react-app/issues"
   },
   "files": [
-    "template",
+    "template/.vscode",
+    "template/public",
+    "template/src",
+    "template/.eslintrc.js",
+    "template/gitignore",
+    "template/README.md",
+    "template/tsconfig.json",
     "template.json"
   ]
 }

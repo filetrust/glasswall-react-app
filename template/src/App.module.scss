@@ -9,7 +9,7 @@
   margin: 1%;
 }
 
-.main {    
+.main {
   display: block;
   width: 100%;
   height: calc(100% - 6rem);
@@ -26,21 +26,25 @@
   border-radius: .6rem;
 }
 
-.titleContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: linear-gradient(-45deg, #196480, #0c3450);
-}
-
-// TODO: Remove temporary styles for the splash screen.
-
-.heading {
-  position: relative;
-  margin-bottom: 0;
-  font-size: 3.2rem;
-  font-weight: bold;
-  color: white;
+.button {
+  display: inline-block;
+  width: 10rem;
+  margin: 4rem 1rem 0;
+  padding: 0;
+  font-size: 1.4rem;
+  line-height: 3.2rem;
+  text-decoration: none;
   text-align: center;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: #fff;
+  border: #6697a6 2px solid;
+  border-radius: .3rem;
+  transition: all .3s;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);
+  }
+
 }

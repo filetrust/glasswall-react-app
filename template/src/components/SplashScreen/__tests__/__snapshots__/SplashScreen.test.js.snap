@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SplashScreen_Snapshot 1`] = `
+<div
+  className="splashContainer"
+  data-testid="splashContainerDiv"
+>
+  <div
+    className="logoContainer"
+    data-testid="logoContainerDiv"
+  >
+    <div
+      className="logo"
+      data-testid="logoDiv"
+    />
+  </div>
+  <div
+    className="headingContainer"
+    data-testid="headingContainerDiv"
+  >
+    <h1
+      className="heading"
+    >
+      Test Heading
+    </h1>
+    <h2
+      className="subHeading"
+    >
+      Test Sub Heading
+    </h2>
+    <div
+      className="childContainer"
+      data-testid="childContainerDiv"
+    >
+      <p>
+        Test paragraph.
+      </p>
+      <button>
+        Test Button
+      </button>
+    </div>
+  </div>
+</div>
+`;

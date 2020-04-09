@@ -1,16 +1,16 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import {shallow} from "enzyme";
+import { shallow } from "enzyme";
 import App from "./App";
-import GlasswallLoginLogo from "./components/GlasswallLoginLogo/GlasswallLoginLogo";
+import SplashScreen from "./components/SplashScreen/SplashScreen";
 
-test("Renders_GlasswallLoginLogo_Component", () => {
+test("Renders_SplashScreen_Component", () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.find(GlasswallLoginLogo)).toHaveLength(1);
+    expect(wrapper.find(SplashScreen)).toHaveLength(1);
 });
 
 test("Renders_Title", () => {
     const { getByText } = render(<App />);
-    const titleElement = getByText(/Glasswall-React-App/i);
+    const titleElement = getByText(/Glasswall React App/i);
     expect(titleElement).toBeInTheDocument();
 });
