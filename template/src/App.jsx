@@ -1,42 +1,45 @@
 import React, { useState } from "react";
 
-import SplashScreen from "./components/SplashScreen/SplashScreen";
-import { NavBar, Nav, NavButton, ExpandButton } from "./components/GlasswallNav/GlasswallNav";
+import { NavBar, Nav, NavButton, ExpandButton, NavSpacer } from "./components/GlasswallNav/GlasswallNav";
+import SplashScreenView from "./views/SplashScreenView/SplashScreenView";
 
 import styles from "./App.module.scss";
 
 const App = () => {
-    const [showSplashScreen, setShowSplashScreen] = useState(false);
+    const [showSplashScreen, setShowSplashScreen] = useState(true);
     const [navExpanded, setNavExpanded] = useState(true);
 
     return (
         <div className={styles.app}>
             <div className={styles.mainContainer}>
                 {showSplashScreen &&
-                    <SplashScreen heading="Glasswall React App" subHeading="Edit src/App.jsx and save to reload.">
-                        <div>
-                            <p className={styles.link} onClick={() => setShowSplashScreen(false)}>Click here to hide the Splash Screen.</p>
-                        </div>
-
-                        <div>
-                            <a className={styles.button} href="https://filetrust.github.io/frontend/" target="_blank" rel="noopener noreferrer">Styleguide</a>
-                        </div>
-
-                        <div>
-                            <a className={styles.button} href="https://github.com/filetrust/glasswall-react-app" target="_blank" rel="noopener noreferrer">Github</a>
-                        </div>
-                    </SplashScreen>
+                    <SplashScreenView hideSplashScreen={() => setShowSplashScreen(false)} />
                 }
 
                 {!showSplashScreen &&
                     <NavBar expanded={navExpanded} logo>
-                        <Nav expanded={navExpanded}>
-                            <NavButton buttonType="button5">
+                        <Nav expanded={navExpanded}> {/* TODO: Add react-router / method of switching views. */}
+                            <NavButton>
                                 Home
                             </NavButton>
 
+                            <NavSpacer />
+
+                            <NavButton>
+                                About
+                            </NavButton>
+
+                            <NavButton>
+                                Contact
+                            </NavButton>
                         </Nav>
-                        
+
+                        <Nav expanded={navExpanded} bottom>
+                            <NavButton clickHandler={() => setShowSplashScreen(true)}>
+                                Back
+                            </NavButton>
+                        </Nav>
+
                         <ExpandButton expanded={navExpanded} clickHandler={() => setNavExpanded(!navExpanded)} />
                     </NavBar>
                 }

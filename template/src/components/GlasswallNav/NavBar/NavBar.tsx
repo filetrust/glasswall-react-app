@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import GlasswallLogo from "../../GlasswallLogo/GlasswallLogo";
 
 import styles from "./NavBar.module.scss";
-import { ExpandButton } from "../ExpandButton/ExpandButton";
 
 export interface NavBarProps { logo: boolean, expanded: boolean, children?: React.ReactNode }
 
@@ -16,7 +15,8 @@ const NavBar = (props: NavBarProps) => {
                 <GlasswallLogo className={styles.logo} />
             }
 
-            {props.children}            
+            {props.children}
+
         </div>
     );
 };
