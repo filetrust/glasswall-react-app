@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import { NavBar, Nav, NavButton, ExpandButton, NavSpacer } from "./components/GlasswallNav/GlasswallNav";
 import SplashScreenView from "./views/SplashScreenView/SplashScreenView";
@@ -9,6 +10,8 @@ const App = () => {
     const [showSplashScreen, setShowSplashScreen] = useState(true);
     const [navExpanded, setNavExpanded] = useState(true);
 
+
+
     return (
         <div className={styles.app}>
             <div className={styles.mainContainer}>
@@ -17,31 +20,58 @@ const App = () => {
                 }
 
                 {!showSplashScreen &&
-                    <NavBar expanded={navExpanded} logo>
-                        <Nav expanded={navExpanded}> {/* TODO: Add react-router / method of switching views. */}
-                            <NavButton>
-                                Home
+                    <Router>
+                        <NavBar expanded={navExpanded} logo>
+                            <Nav expanded={navExpanded}>
+                                <Link to="/">
+                                    <NavButton>
+                                        Home
+                                    </NavButton>
+                                </Link>
+
+                                <NavSpacer />
+
+                                <Link to="/about">
+                                    <NavButton>
+                                        About
+                                    </NavButton>
+                                </Link>
+
+                                <Link to="/contact">
+                                    <NavButton>
+                                        Contact
+                                    </NavButton>
+                                </Link>
+                            </Nav>
+
+                            <Nav expanded={navExpanded} bottom>
+                                <NavButton clickHandler={() => setShowSplashScreen(true)}>
+                                    Back
                             </NavButton>
+                            </Nav>
 
-                            <NavSpacer />
+                            <ExpandButton expanded={navExpanded} clickHandler={() => setNavExpanded(!navExpanded)} />
+                        </NavBar>
 
-                            <NavButton>
-                                About
-                            </NavButton>
+                        <div className={`${styles.main} ${navExpanded ? styles.expanded : ""}`}>
+                            <div className={styles.content}>
+                                <Switch>
+                                    <Route exact path="/">
+                                        <div>Home</div>
+                                    </Route>
 
-                            <NavButton>
-                                Contact
-                            </NavButton>
-                        </Nav>
+                                    <Route path="/about">
+                                        <div>About</div>
+                                    </Route>
 
-                        <Nav expanded={navExpanded} bottom>
-                            <NavButton clickHandler={() => setShowSplashScreen(true)}>
-                                Back
-                            </NavButton>
-                        </Nav>
+                                    <Route path="/contact">
+                                        <div>Contact</div>
+                                    </Route>
 
-                        <ExpandButton expanded={navExpanded} clickHandler={() => setNavExpanded(!navExpanded)} />
-                    </NavBar>
+                                </Switch>
+                            </div>
+                        </div>
+                    </Router>
                 }
             </div>
         </div>
