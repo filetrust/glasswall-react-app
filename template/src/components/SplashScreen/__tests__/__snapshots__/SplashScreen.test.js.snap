@@ -10,6 +10,7 @@ exports[`SplashScreen_Snapshot 1`] = `
     data-testid="logoContainerDiv"
   >
     <div
+      className="logo"
       data-testid="logoDiv"
       style={
         Object {

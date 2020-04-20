@@ -2,6 +2,7 @@
 
 exports[`GlasswallLogo_Snapshot 1`] = `
 <div
+  className="defaultLogo"
   data-testid="logoDiv"
   style={
     Object {
