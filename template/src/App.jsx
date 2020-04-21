@@ -22,6 +22,8 @@ const App = () => {
                 {!showSplashScreen &&
                     <Router>
                         <NavBar expanded={navExpanded} logo>
+                            <p>test</p>
+
                             <Nav expanded={navExpanded}>
                                 <Link to="/">
                                     <NavButton>
@@ -47,7 +49,7 @@ const App = () => {
                             <Nav expanded={navExpanded} bottom>
                                 <NavButton clickHandler={() => setShowSplashScreen(true)}>
                                     Back
-                            </NavButton>
+                                </NavButton>
                             </Nav>
 
                             <ExpandButton expanded={navExpanded} clickHandler={() => setNavExpanded(!navExpanded)} />
