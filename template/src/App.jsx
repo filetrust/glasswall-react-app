@@ -22,8 +22,6 @@ const App = () => {
                 {!showSplashScreen &&
                     <Router>
                         <NavBar expanded={navExpanded} logo>
-                            <p>test</p>
-
                             <Nav expanded={navExpanded}>
                                 <Link to="/">
                                     <NavButton>
