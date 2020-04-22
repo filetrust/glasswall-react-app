@@ -2,11 +2,11 @@ import React from "react";
 import { render } from "@testing-library/react";
 import { shallow } from "enzyme";
 import App from "./App";
-import SplashScreen from "./components/SplashScreen/SplashScreen";
+import SplashScreenView from "./views/SplashScreenView/SplashScreenView";
 
 test("Renders_SplashScreen_Component", () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.find(SplashScreen)).toHaveLength(1);
+    expect(wrapper.find(SplashScreenView)).toHaveLength(1);
 });
 
 test("Renders_Title", () => {
