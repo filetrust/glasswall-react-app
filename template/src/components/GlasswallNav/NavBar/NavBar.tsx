@@ -3,11 +3,9 @@ import PropTypes from "prop-types";
 
 import GlasswallLogo from "../../GlasswallLogo/GlasswallLogo";
 
-import {Nav} from "../Nav/Nav";
-
 import styles from "./NavBar.module.scss";
 
-export interface NavBarProps { logo: boolean, expanded: boolean, children: Array<Nav> }
+export interface NavBarProps { logo: boolean, expanded: boolean, children: React.ReactNode }
 
 const NavBar = (props: NavBarProps) => {
 

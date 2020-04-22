@@ -1,22 +1,22 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
 import TestRenderer from "react-test-renderer";
-import { ExpandButton } from "../ExpandButton";
+import { NavButton } from "../NavButton";
 
-const expanded = true;
+const selected = true;
 
 const clickHandler = () => {
-    console.log("expanded: " + !expanded)
+    console.log("click handled.")
 };
 
 const props = {
-    expanded: expanded,
+    selected: selected,
     clickHandler: clickHandler
 };
 
-test("ExpandButton_Snapshot", () => {
+test("NavButton_Snapshot", () => {
     // Arrange
-    const component = TestRenderer.create(<ExpandButton {...props} />);
+    const component = TestRenderer.create(<NavButton {...props} />);
 
     // Act
     let tree = component.toJSON();
@@ -28,9 +28,9 @@ test("ExpandButton_Snapshot", () => {
 test("Displays_Correct_Props", () => {
     // Arrange
     // Act
-    const expandButtonComponent = mount(<ExpandButton {...props}/>);
+    const expandButtonComponent = mount(<NavButton {...props}/>);
 
     // Assert
-    expect(expandButtonComponent.prop("expanded")).toEqual(props.expanded);
+    expect(expandButtonComponent.prop("selected")).toEqual(props.selected);
     expect(expandButtonComponent.prop("clickHandler")).toEqual(props.clickHandler);    
 });
