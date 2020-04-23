@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import { NavBar, Nav, NavButton, ExpandButton, NavSpacer } from "./components/GlasswallNav/GlasswallNav";
+import {
+    NavBar,
+    Nav,
+    NavButton,
+    ExpandButton,
+    NavSpacer
+} from "./components/GlasswallNav/GlasswallNav";
+import Main from "./components/Main/Main";
 import SplashScreenView from "./views/SplashScreenView/SplashScreenView";
 
 import styles from "./App.module.scss";
@@ -50,31 +57,31 @@ const App = () => {
                                 </NavButton>
                             </Nav>
 
-                            <ExpandButton expanded={navExpanded} clickHandler={() => setNavExpanded(!navExpanded)} />
+                            <ExpandButton
+                                expanded={navExpanded}
+                                clickHandler={() => setNavExpanded(!navExpanded)} />
                         </NavBar>
 
-                        <div className={`${styles.main} ${navExpanded ? styles.expanded : ""}`}>
-                            <div className={styles.content}>
-                                <Switch>
-                                    <Route exact path="/">
-                                        <div>Home</div>
-                                    </Route>
+                        <Main expanded={navExpanded}>
+                            <Switch>
+                                <Route exact path="/">
+                                    <div>Home</div>
+                                </Route>
 
-                                    <Route path="/about">
-                                        <div>About</div>
-                                    </Route>
+                                <Route path="/about">
+                                    <div>About</div>
+                                </Route>
 
-                                    <Route path="/contact">
-                                        <div>Contact</div>
-                                    </Route>
+                                <Route path="/contact">
+                                    <div>Contact</div>
+                                </Route>
 
-                                </Switch>
-                            </div>
-                        </div>
+                            </Switch>
+                        </Main>
                     </Router>
                 }
             </div>
-        </div>
+        </div >
     );
 };
 
