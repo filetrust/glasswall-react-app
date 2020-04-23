@@ -25,9 +25,9 @@ test("NavBar_Snapshot", () => {
 test("Displays_Correct_Props", () => {
     // Arrange
     // Act
-    const expandButtonComponent = mount(<NavBar {...props}/>);
+    const navBarComponent = mount(<NavBar {...props}/>);
 
     // Assert
-    expect(expandButtonComponent.prop("logo")).toEqual(props.logo);
-    expect(expandButtonComponent.prop("expanded")).toEqual(props.expanded);
+    expect(navBarComponent.prop("logo")).toEqual(props.logo);
+    expect(navBarComponent.prop("expanded")).toEqual(props.expanded);
 });
