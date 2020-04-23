@@ -62,7 +62,7 @@ const App = () => {
                                 clickHandler={() => setNavExpanded(!navExpanded)} />
                         </NavBar>
 
-                        <Main expanded={navExpanded}>
+                        <Main expanded={navExpanded} showTitle title="Glasswall React App">
                             <Switch>
                                 <Route exact path="/">
                                     <div>Home</div>

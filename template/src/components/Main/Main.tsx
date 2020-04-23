@@ -11,16 +11,19 @@ export interface MainProps {
 
 const Main = (props: MainProps) => {
 
-    if (props.showTitle && props.title === "") {
+    if (props.showTitle && (props.title === undefined || props.title === null)) {
         console.error("showTitle is set to true, but no title was supplied to <Main>.");
     }
 
     return (
         <>
-            <h1 className={`${styles.pageHeading} ${props.expanded ? styles.expanded : ""}`}>
-                Interactive Statement of Work
-            </h1>
-            <div className={`${styles.main} ${props.expanded ? styles.expanded : ""}`}>
+            {props.showTitle &&
+                <h1 className={`${styles.pageHeading} ${props.expanded ? styles.expanded : ""}`}>
+                    {props.title}
+                </h1>
+            }
+
+            <div className={`${styles.main} ${props.expanded ? styles.expanded : ""} ${props.showTitle ? styles.showTitle : ""}`}>
 
                 <div className={styles.content}>
                     {props.children}
