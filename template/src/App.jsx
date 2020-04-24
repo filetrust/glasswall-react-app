@@ -10,14 +10,14 @@ import {
 } from "./components/GlasswallNav/GlasswallNav";
 import Main from "./components/Main/Main";
 import SplashScreenView from "./views/SplashScreenView/SplashScreenView";
+import GlasswallModal from "./components/GlasswallModal/GlasswallModal";
 
 import styles from "./App.module.scss";
 
 const App = () => {
     const [showSplashScreen, setShowSplashScreen] = useState(true);
     const [navExpanded, setNavExpanded] = useState(true);
-
-
+    const [modalIsOpen, setModalIsOpen] = useState(false);
 
     return (
         <div className={styles.app}>
@@ -52,6 +52,10 @@ const App = () => {
                             </Nav>
 
                             <Nav expanded={navExpanded} bottom>
+                                <NavButton clickHandler={() => setModalIsOpen(true)}>
+                                    Modal
+                                </NavButton>
+
                                 <NavButton clickHandler={() => setShowSplashScreen(true)}>
                                     Back
                                 </NavButton>
@@ -78,10 +82,12 @@ const App = () => {
 
                             </Switch>
                         </Main>
+
+                        <GlasswallModal isOpen={modalIsOpen} onCloseAction={() => setModalIsOpen(false)}/>
                     </Router>
                 }
             </div>
-        </div >
+        </div>
     );
 };
 
