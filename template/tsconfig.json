@@ -12,6 +12,7 @@
     "jsx": "preserve",
     "strict": true,
     "esModuleInterop": true,
+    "strictNullChecks": false,
     "forceConsistentCasingInFileNames": true,
     "lib": [
       "dom",
