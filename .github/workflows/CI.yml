@@ -15,6 +15,10 @@ jobs:
 
     - name: Installation ⏳
       run: yarn
+
+    - name: Install Packages ⏳
+      working-directory: ./template
+      run: yarn install
    
     - name: Build 🧱
       working-directory: ./template
