@@ -5,7 +5,6 @@ on:
     branches: master
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
     
@@ -14,8 +13,10 @@ jobs:
     
     - uses: actions/setup-node@v1
 
-    - name: Installation ⏳
-      run: yarn
+    - name: Install Packages ⏳
+      working-directory: ./template
+      run: npm install
    
     - name: Build 🧱
-      run: yarn build
+      working-directory: ./template
+      run: npm build
