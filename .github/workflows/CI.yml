@@ -13,13 +13,10 @@ jobs:
     
     - uses: actions/setup-node@v1
 
-    - name: Installation ⏳
-      run: yarn
-
     - name: Install Packages ⏳
       working-directory: ./template
-      run: yarn install
+      run: npm install
    
     - name: Build 🧱
       working-directory: ./template
-      run: yarn build
+      run: npm build
