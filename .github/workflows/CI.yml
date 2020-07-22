@@ -5,10 +5,12 @@ on:
     branches: master
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
     
+    env:
+      working-directory: ./template
+
     steps:
     - uses: actions/checkout@v2
     
