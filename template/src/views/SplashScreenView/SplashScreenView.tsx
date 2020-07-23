@@ -14,11 +14,11 @@ const SplashScreenView = (props: SplashScreenViewProps) => {
             </div>
 
             <div>
-                <a className={styles.button} href="https://filetrust.github.io/frontend/" target="_blank" rel="noopener noreferrer">Styleguide</a>
+                <a className={styles.link} href="https://filetrust.github.io/frontend/" target="_blank" rel="noopener noreferrer">Styleguide</a>
             </div>
 
-            <div>
-                <a className={styles.button} href="https://github.com/filetrust/glasswall-react-app" target="_blank" rel="noopener noreferrer">Github</a>
+            <div style={{paddingTop: "1rem"}}>
+                <a className={styles.link} href="https://github.com/filetrust/glasswall-react-app" target="_blank" rel="noopener noreferrer">Github</a>
             </div>
         </SplashScreen>
     );
