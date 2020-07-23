@@ -23,7 +23,7 @@ export interface ModalProps {
     onClickOutside: Function,
     isOpen: boolean,
     transitionTimeout: number,
-    onExitCallback: ExitHandler,
+    onExitCallback: ExitHandler<any>,
     children: React.ReactNode
 }
 
