@@ -4,6 +4,7 @@ import { shallow, mount } from "enzyme";
 import TestRenderer from "react-test-renderer";
 import SplashScreen from "../SplashScreen";
 import GlasswallLogo from "../../GlasswallLogo/GlasswallLogo";
+import { checkPropTypes } from "prop-types";
 
 const paragraph = <p key="paragraph">Test paragraph.</p>;
 
@@ -93,4 +94,23 @@ test("Displays_Correct_Props", () => {
     expect(splashScreenComponent.prop("subHeading")).toEqual(props.subHeading);
     expect(splashScreenComponent.prop("children")[0]).toEqual(paragraph);
     expect(splashScreenComponent.prop("children")[1]).toEqual(button);
+});
+
+test("Renders_With_No_Subheading", () => {
+    // Arrange
+    // Act
+    const splashScreenComponent = mount(<SplashScreen heading={props.heading}/>);
+
+    // Assert
+    expect(splashScreenComponent.prop("heading")).toEqual(props.heading);
+    expect(splashScreenComponent.prop("subHeading")).toEqual(undefined);
+});
+
+test("Renders_With_No_Children", () => {
+    // Arrange
+    // Act
+    const splashScreenComponent = mount(<SplashScreen heading={props.heading}/>);
+
+    // Assert
+    expect(splashScreenComponent.prop("children")).toEqual(undefined);
 });
