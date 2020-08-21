@@ -1,4 +1,6 @@
 # Glasswall React App
+![CI](https://github.com/filetrust/glasswall-react-app/workflows/CI/badge.svg)
+![Release](https://github.com/filetrust/glasswall-react-app/workflows/Release/badge.svg)
 
 The Glasswall React and Typescript template for [Create React App](https://create-react-app.dev/)
 
